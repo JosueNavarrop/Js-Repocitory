@@ -1,4 +1,3 @@
-
 // Imprecion en consola
 // console.log("Hello Word!")
 
@@ -6,16 +5,13 @@
 // console.log(23 + 12)
 
 //Declaracion de variables
-let a =  13
-let b  = 13
+let a = 13
+let b = 13
 
 //Una funcion que retorna una suma
-function suma( a, b){
+function suma(a, b) {
     return a + b;
 }
-
-//Imprimiendo en consola el llamado que le hago a esa suma
-// console.log(suma(a,b))
 
 //Declarando, iniciando y imprimiendo una variable de tipo string 
 let messages;
@@ -29,16 +25,6 @@ let alerta = "ESTO ES UNA ALERTA!"
 
 //Declaracion de variables multiples
 let user = 'Josue Navarro', age = 20, description = 'dev'
-// console.log(user, age, description)
-// console.log(user +" " + age + " "+ description)
-
-let paseDatos = "Hola"
-
-let resiveDatos
-
-resiveDatos = paseDatos
-
-// console.log(resiveDatos)
 
 //Variables con diferentes significados 
 apple = "manzana"
@@ -49,17 +35,6 @@ const COLOR_RED = "#F00";
 const COLOR_GREEN = "#0F0";
 const COLOR_BLUE = "#00F";
 const COLOR_ORANGE = "#FF7F00";
-
-// ...when we need to pick a color
-let color = COLOR_ORANGE;
-// alert(color); // #FF7F00
-
-//Se recomienda ponerle el segundo argumento a la funcion de promp
-// let AGE = prompt('Cuanntos años tiene usted?', 45)
-
-// alert(`Usted tieen ${AGE} años de edad`)
-
-
 
 
 
@@ -159,21 +134,21 @@ const backgroundColors = [
 
 
 //Get a random color from the array 
-function randomColorSelected(){
-    let randNumber = Math.floor(Math.random() * backgroundColors.length); 
-    return backgroundColors[randNumber]; 
+function randomColorSelected() {
+    let randNumber = Math.floor(Math.random() * backgroundColors.length);
+    return backgroundColors[randNumber];
 }
 
 //Every Click to the backgroundColorButton button the background color change 
 let backgroundColorButton = document.querySelector("#backgroundColorButton");
 
-backgroundColorButton.addEventListener('click', function randomColorSelected(){
-    
+backgroundColorButton.addEventListener('click', function randomColorSelected() {
+
     //Get a random color from de array.
-    let randNumber = Math.floor(Math.random() * backgroundColors.length); 
+    let randNumber = Math.floor(Math.random() * backgroundColors.length);
     let ColorParagraph = document.querySelector("#ColorParagraph");
     let colorCode = backgroundColors[randNumber];
-    
+
     //Get a dynnamic variable from the CSS with the JS        
     const whiteColor = '#FFFFFF';
     document.documentElement.style.setProperty('--dynami-text-color', whiteColor);
@@ -181,6 +156,11 @@ backgroundColorButton.addEventListener('click', function randomColorSelected(){
 
     return ColorParagraph.innerText = colorCode;
 });
+
+
+
+
+//SOME EXAMNPLES AND TEST!
 
 // backgroundColorButton = randomColorSelected();
 //  let colorCode = backgroundColors[0];
@@ -192,12 +172,8 @@ backgroundColorButton.addEventListener('click', function randomColorSelected(){
 
 // let colorCode = document.querySelector("ColorParagraph");
 
-
 // console.log(backgroundColorButton);
 
-
-
 // console.log(paragraphHTML);
-
 
 // paragraphHTML.innerText = "colorCode";
