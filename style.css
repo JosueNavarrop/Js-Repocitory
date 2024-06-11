@@ -1,0 +1,15 @@
+:root{
+    --dynamic-bg-color: #FFFFFF;
+    --dynami-text-color: #000000;
+}
+
+
+body{
+ 
+    background-color: var(--dynamic-bg-color);
+    color: var(--dynami-text-color);
+}
+
+/* img{
+    border-radius: 120px;
+} */
