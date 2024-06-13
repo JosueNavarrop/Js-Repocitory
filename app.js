@@ -236,7 +236,11 @@ backgroundColorButton.addEventListener('click', function randomColorSelected() {
     return ColorParagraph.innerText = colorCode;
 });
 
+function searchHexDecimalColor(){
 
+//Logic for search the hex color
+
+}
 
 
 //SOME EXAMNPLES AND TEST!
