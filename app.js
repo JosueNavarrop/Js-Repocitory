@@ -177,3 +177,9 @@ backgroundColorButton.addEventListener('click', function randomColorSelected() {
 // console.log(paragraphHTML);
 
 // paragraphHTML.innerText = "colorCode";
+
+
+
+//LLAMAR Y REFERENCIAR UNA FUNCION NO ES LO MISMO:
+//LLamar: btn.onclick = FunctionExample();
+//Asignar: btn.onclick = FunctionExample;
