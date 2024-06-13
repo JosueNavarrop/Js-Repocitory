@@ -230,17 +230,50 @@ backgroundColorButton.addEventListener('click', function randomColorSelected() {
 
     //Get a dynnamic variable from the CSS with the JS        
     const whiteColor = '#FFFFFF';
-    document.documentElement.style.setProperty('--dynami-text-color', whiteColor);
+    document.documentElement.style.setProperty('--dynamic-text-color', whiteColor);
     document.documentElement.style.setProperty('--dynamic-bg-color', colorCode);
 
     return ColorParagraph.innerText = colorCode;
 });
 
-function searchHexDecimalColor(){
+// function searchHexDecimalColor(){
 
+// let inputValue = form.search-Hex-color.value;    
+
+    const searchBtn = document.querySelector("#HexadecimalColor");
+
+    searchBtn.addEventListener('click', function hola(){
+        console.log("HOLA HOLA")
+    })
+    let inputValue = "#98B4D4"; 
+    
+    let foundInArray = backgroundColors.find((element) =>  element == inputValue);
+
+    // console.log(foundInArray)
+
+    if(inputValue == foundInArray){
+
+        // console.log("HOLA HOLA");
+
+        document.documentElement.style.setProperty('--dynamic-input-color:', inputValue);
+    }
+
+
+    // for(let i = 0; i< backgroundColors.length; i++){
+        
+        // if(inputValue == backgroundColors[i]){
+        //     console.log(backgroundColors[i] + "VAlUE");
+
+        // }else{
+        //     alert("THE COLOR IS NOT IN THE ARRAY!!");
+        // }
+
+    // }
 //Logic for search the hex color
 
-}
+
+// }
+
 
 
 //SOME EXAMNPLES AND TEST!

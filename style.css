@@ -1,6 +1,7 @@
 :root{
     --dynamic-bg-color: #FFFFFF;
-    --dynami-text-color: #000000;
+    --dynamic-text-color: #000000;
+    --dynamic-input-color: --dynamic-bg-color; 
 }
 
 
