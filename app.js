@@ -179,6 +179,16 @@ backgroundColorButton.addEventListener('click', function randomColorSelected() {
 // paragraphHTML.innerText = "colorCode";
 
 
+//Acceder al ultimo elemento de un array:
+
+/**let cities = [ "London", "New York", "Mumbai" ];
+
+console.log(cities)
+
+cities[cities.length - 1] = "Mexico city";
+
+console.log(cities) */
+
 
 //LLAMAR Y REFERENCIAR UNA FUNCION NO ES LO MISMO:
 //LLamar: btn.onclick = FunctionExample();
