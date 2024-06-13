@@ -129,7 +129,86 @@ const backgroundColors = [
     "#2E4053", // Blue Gray
     "#212F3D", // Dark Blue Gray
     "#1C2833", // Very Dark Blue Gray
-    "#17202A"  // Almost Black Blue Gray
+    "#17202A",  // Almost Black Blue Gray
+    // Additional colors
+    "#FF6F61", // Coral
+    "#6B5B95", // Purple Iris
+    "#88B04B", // Greenery
+    "#F7CAC9", // Pale Dogwood
+    "#92A8D1", // Serenity
+    "#955251", // Marsala
+    "#B565A7", // Orchid
+    "#009B77", // Jade
+    "#DD4124", // Tangerine Tango
+    "#D65076", // Radiant Orchid
+    "#45B8AC", // Sea Foam Green
+    "#EFC050", // Mimosa
+    "#5B5EA6", // Royal Blue
+    "#9B2335", // Cabernet
+    "#DFCFBE", // Sand
+    "#55B4B0", // Island Paradise
+    "#E15D44", // Red Orange
+    "#7FCDCD", // Glacier Blue
+    "#BC243C", // Cherry
+    "#C3447A", // Fuchsia Rose
+    "#98B4D4", // Powder Blue
+    "#F0E68C", // Khaki
+    "#FFD700", // Gold
+    "#DAA520", // Goldenrod
+    "#B0E0E6", // Powder Blue
+    "#BDB76B", // Dark Khaki
+    "#556B2F", // Olive Drab
+    "#8B4513", // Saddle Brown
+    "#D2691E", // Chocolate
+    "#CD853F", // Peru
+    "#8B0000", // Dark Red
+    "#B22222", // Fire Brick
+    "#FF4500", // Orange Red
+    "#FFA07A", // Light Salmon
+    "#20B2AA", // Light Sea Green
+    "#87CEFA", // Light Sky Blue
+    "#4682B4", // Steel Blue
+    "#5F9EA0", // Cadet Blue
+    "#D2B48C", // Tan
+    "#BC8F8F", // Rosy Brown
+    "#F08080", // Light Coral
+    "#FFE4B5", // Moccasin
+    "#FFDAB9", // Peach Puff
+    "#EEE8AA", // Pale Goldenrod
+    "#98FB98", // Pale Green
+    "#AFEEEE", // Pale Turquoise
+    "#DB7093", // Pale Violet Red
+    "#FF6347", // Tomato
+    "#FF7F50", // Coral
+    "#FF69B4", // Hot Pink
+    "#FF1493", // Deep Pink
+    "#C71585", // Medium Violet Red
+    "#DB7093", // Pale Violet Red
+    "#F4A460", // Sandy Brown
+    "#DA70D6", // Orchid
+    "#BA55D3", // Medium Orchid
+    "#9932CC", // Dark Orchid
+    "#9400D3", // Dark Violet
+    "#8A2BE2", // Blue Violet
+    "#9370DB", // Medium Purple
+    "#D8BFD8", // Thistle
+    "#E6E6FA", // Lavender
+    "#F5FFFA", // Mint Cream
+    "#FFF0F5", // Lavender Blush
+    "#FAEBD7", // Antique White
+    "#FFEFD5", // Papaya Whip
+    "#FFE4E1", // Misty Rose
+    "#FFFACD", // Lemon Chiffon
+    "#FAFAD2", // Light Goldenrod Yellow
+    "#FDF5E6", // Old Lace
+    "#F5DEB3", // Wheat
+    "#FFF8DC", // Cornsilk
+    "#FFF5EE", // Seashell
+    "#F0FFF0", // Honeydew
+    "#F5F5F5", // White Smoke
+    "#F8F8FF", // Ghost White
+    "#FFFAFA", // Snow
+    "#FDFEFE"  // Azure White
 ];
 
 
