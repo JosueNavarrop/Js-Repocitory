@@ -244,78 +244,78 @@ let searchBtn = document.getElementById("HexadecimalColorBtn");
 
 
 searchBtn.addEventListener('click', function(){
+    
     let searchvalue = input.value.toUpperCase();
     let foundInArray = backgroundColors.find((element) =>  element == searchvalue);
     let ColorParagraph = document.querySelector("#ColorParagraph");
     // if(foundInArray == undefined){
-    //     alert("Please enter a valid hexadecimal color code!");
-
-    // }
-    document.documentElement.style.setProperty('--dynamic-bg-color', foundInArray);
-
-    return ColorParagraph.innerText = colorCode;
-});
-    
-let request = new XMLHttpRequest();
-const HexColorTest = '9932CC';
-
-// request.open('GET', `https://www.thecolorapi.com/id?hex=${HexColorTest}`, true);
-
-
-function getData() {
-    const response =  fetch(`https://www.thecolorapi.com/id?hex=${HexColorTest}`);
-    response = response.json();
-    const data = response;
-    console.log(data);
-}
-
-
-
-function searchValueInArray(){
-    // console.log(input)
-    if(input == foundInArray){
-        console.log("HOLA HOLA")
-        // console.log("HOLA HOLA");
-    }
-
-}
-
-    // console.log(foundInArray)
-    
-
-
-    // for(let i = 0; i< backgroundColors.length; i++){
+        //     alert("Please enter a valid hexadecimal color code!");
         
-        // if(inputValue == backgroundColors[i]){
-        //     console.log(backgroundColors[i] + "VAlUE");
-
-        // }else{
-        //     alert("THE COLOR IS NOT IN THE ARRAY!!");
         // }
-
-    // }
-//Logic for search the hex color
-
-
-// }
-
-
-
-//SOME EXAMNPLES AND TEST!
-
-// backgroundColorButton = randomColorSelected();
-//  let colorCode = backgroundColors[0];
-// console.log(randomColorSelected());
-
-// backgroundColors.forEach(element =>
-//     console.log(element)
-// );
-
-// let colorCode = document.querySelector("ColorParagraph");
-
-// console.log(backgroundColorButton);
-
-// console.log(paragraphHTML);
+        document.documentElement.style.setProperty('--dynamic-bg-color', foundInArray);
+        getData();
+        
+        // return ColorParagraph.innerText = colorCode;
+});
+        
+        let request = new XMLHttpRequest();
+        
+        // request.open('GET', `https://www.thecolorapi.com/id?hex=${HexColorTest}`, true);
+        
+        
+        function getData() {
+            const HexColorTest = '9932CC';
+            const response =  fetch(`https://www.thecolorapi.com/id?hex=${HexColorTest}`);
+            const data = response;
+            console.log(data);
+        }
+        
+        
+        function searchValueInArray(){
+            // console.log(input)
+            if(input == foundInArray){
+                console.log("HOLA HOLA")
+                // console.log("HOLA HOLA");
+                }
+                
+                }
+                
+                // console.log(foundInArray)
+                
+                
+                
+                // for(let i = 0; i< backgroundColors.length; i++){
+                    
+                // if(inputValue == backgroundColors[i]){
+                    //     console.log(backgroundColors[i] + "VAlUE");
+                    
+                    // }else{
+                        //     alert("THE COLOR IS NOT IN THE ARRAY!!");
+                        // }
+                        
+                        // }
+                        //Logic for search the hex color
+                        
+                        
+                        // }
+                        
+                        
+                        
+                        //SOME EXAMNPLES AND TEST!
+                        
+                        // backgroundColorButton = randomColorSelected();
+                        //  let colorCode = backgroundColors[0];
+                        // console.log(randomColorSelected());
+                        
+                        // backgroundColors.forEach(element =>
+                            //     console.log(element)
+                            // );
+                            
+                            // let colorCode = document.querySelector("ColorParagraph");
+                            
+                            // console.log(backgroundColorButton);
+                            
+                            // console.log(paragraphHTML);
 
 // paragraphHTML.innerText = "colorCode";
 
