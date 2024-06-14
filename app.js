@@ -30,16 +30,16 @@ let user = 'Josue Navarro', age = 20, description = 'dev'
 apple = "manzana"
 APPLE = "MANZANA"
 
-//Constantes
-const COLOR_RED = "#F00";
-const COLOR_GREEN = "#0F0";
-const COLOR_BLUE = "#00F";
-const COLOR_ORANGE = "#FF7F00";
+//letantes
+let COLOR_RED = "#F00";
+let COLOR_GREEN = "#0F0";
+let COLOR_BLUE = "#00F";
+let COLOR_ORANGE = "#FF7F00";
 
 
 
 //Array of colors
-const backgroundColors = [
+let backgroundColors = [
     "#2C3E50", // Midnight Blue
     "#34495E", // Wet Asphalt
     "#2C2C2C", // Dark Gray
@@ -229,7 +229,7 @@ backgroundColorButton.addEventListener('click', function randomColorSelected() {
     let colorCode = backgroundColors[randNumber];
 
     //Get a dynnamic variable from the CSS with the JS        
-    const whiteColor = '#FFFFFF';
+    let whiteColor = '#FFFFFF';
     document.documentElement.style.setProperty('--dynamic-text-color', whiteColor);
     document.documentElement.style.setProperty('--dynamic-bg-color', colorCode);
 
@@ -239,24 +239,47 @@ backgroundColorButton.addEventListener('click', function randomColorSelected() {
 // function searchHexDecimalColor(){
 
 // let inputValue = form.search-Hex-color.value;    
+let input = document.getElementById('search-Hex-color');
+let searchBtn = document.getElementById("HexadecimalColorBtn");
 
-    const searchBtn = document.querySelector("#HexadecimalColor");
 
-    searchBtn.addEventListener('click', function hola(){
-        console.log("HOLA HOLA")
-    })
-    let inputValue = "#98B4D4"; 
+searchBtn.addEventListener('click', function(){
+    let searchvalue = input.value.toUpperCase();
+    let foundInArray = backgroundColors.find((element) =>  element == searchvalue);
+    // if(foundInArray == undefined){
+    //     alert("Please enter a valid hexadecimal color code!");
+
+    // }
+    document.documentElement.style.setProperty('--dynamic-bg-color', foundInArray);
+
+});
     
-    let foundInArray = backgroundColors.find((element) =>  element == inputValue);
+let request = new XMLHttpRequest();
+const HexColorTest = '9932CC';
+
+// request.open('GET', `https://www.thecolorapi.com/id?hex=${HexColorTest}`, true);
+
+
+function getData() {
+    const response =  fetch(`https://www.thecolorapi.com/id?hex=${HexColorTest}`);
+    response = response.json();
+    const data = response;
+    console.log(data);
+}
+
+
+
+function searchValueInArray(){
+    // console.log(input)
+    if(input == foundInArray){
+        console.log("HOLA HOLA")
+        // console.log("HOLA HOLA");
+    }
+
+}
 
     // console.log(foundInArray)
-
-    if(inputValue == foundInArray){
-
-        // console.log("HOLA HOLA");
-
-        document.documentElement.style.setProperty('--dynamic-input-color:', inputValue);
-    }
+    
 
 
     // for(let i = 0; i< backgroundColors.length; i++){

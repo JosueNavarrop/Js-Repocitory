@@ -1,13 +1,14 @@
 :root{
     --dynamic-bg-color: #FFFFFF;
     --dynamic-text-color: #000000;
-    --dynamic-input-color: --dynamic-bg-color; 
+    /* --dynamic-input-color: #FFFFFF;  */
 }
 
 
 body{
  
     background-color: var(--dynamic-bg-color);
+    /* background-color: var(--dynamic-input-color); */
     color: var(--dynami-text-color);
 }
 
