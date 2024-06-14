@@ -246,12 +246,14 @@ let searchBtn = document.getElementById("HexadecimalColorBtn");
 searchBtn.addEventListener('click', function(){
     let searchvalue = input.value.toUpperCase();
     let foundInArray = backgroundColors.find((element) =>  element == searchvalue);
+    let ColorParagraph = document.querySelector("#ColorParagraph");
     // if(foundInArray == undefined){
     //     alert("Please enter a valid hexadecimal color code!");
 
     // }
     document.documentElement.style.setProperty('--dynamic-bg-color', foundInArray);
 
+    return ColorParagraph.innerText = colorCode;
 });
     
 let request = new XMLHttpRequest();
