@@ -246,26 +246,26 @@ searchBtn.addEventListener('click', function(){
     let ColorParagraph = document.querySelector("#ColorParagraph");
 
     document.documentElement.style.setProperty('--dynamic-bg-color', foundInArray);
-    getData();
 
         return ColorParagraph.innerText = foundInArray;
 });
         let request = new XMLHttpRequest();
+
+                
+        //TESTING THE API CONEXION
+                
         // request.open('GET', `https://www.thecolorapi.com/id?hex=${HexColorTest}`, true);
-    function getData() {
+                
+    
+    function getColorData() {
         const HexColorTest = '9932CC';
-        const response =  fetch(`https://www.thecolorapi.com/id?hex=${HexColorTest}`);
-        const data = response;
-        console.log(data);
+        const response =  fetch(`https://www.thecolorapi.com/id?hex=${HexColorTest}`).then(response=> response.json()).then( data => console.log(data.hex.value));
+
+        let colorFromAPI = document.querySelector("#colorFromAPI");
+        return response;
     }
     
-    function searchValueInArray(){
-        if(input == foundInArray){
-            console.log("HOLA HOLA")
-        }    
-    }
-
-
+    getColorData(); 
 //Acceder al ultimo elemento de un array:
 
 /**let cities = [ "London", "New York", "Mumbai" ];
