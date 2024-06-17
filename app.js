@@ -248,7 +248,7 @@ searchBtn.addEventListener('click', function(){
     document.documentElement.style.setProperty('--dynamic-bg-color', foundInArray);
     getData();
 
-        // return ColorParagraph.innerText = colorCode;
+        return ColorParagraph.innerText = foundInArray;
 });
         let request = new XMLHttpRequest();
         // request.open('GET', `https://www.thecolorapi.com/id?hex=${HexColorTest}`, true);
