@@ -228,7 +228,9 @@ backgroundColorButton.addEventListener('click', async () => {
     let randNumber = Math.floor(Math.random() * backgroundColors.length);
     let ColorParagraph = document.querySelector("#ColorParagraph");
     let colorCode = backgroundColors[randNumber];
-
+    if(colorCode){
+        //Implementing logic to add de '#' caracter to the colorCode variable
+    }
     //Get a dynnamic variable from the CSS with the JS        
     let whiteColor = '#FFFFFF';
     document.documentElement.style.setProperty('--dynamic-text-color', whiteColor);
