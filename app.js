@@ -221,7 +221,8 @@ let backgroundColors = [
 //Every Click to the backgroundColorButton button the background color change 
 let backgroundColorButton = document.querySelector("#backgroundColorButton");
 
-backgroundColorButton.addEventListener('click', function randomColorSelected() {
+//TRIYING TO GET A OTHER RESPONSE WITH ASYNC
+backgroundColorButton.addEventListener('click', async () => {
 
     //Get a random color from de array.
     let randNumber = Math.floor(Math.random() * backgroundColors.length);
@@ -232,12 +233,12 @@ backgroundColorButton.addEventListener('click', function randomColorSelected() {
     let whiteColor = '#FFFFFF';
     document.documentElement.style.setProperty('--dynamic-text-color', whiteColor);
     document.documentElement.style.setProperty('--dynamic-bg-color', colorCode);
-
+    getColorData();
     return ColorParagraph.innerText = colorCode;
 });
 
-let input = document.getElementById('search-Hex-color');
-let searchBtn = document.getElementById("HexadecimalColorBtn");
+    let input = document.getElementById('search-Hex-color');
+    let searchBtn = document.getElementById("HexadecimalColorBtn");
 
 searchBtn.addEventListener('click', function(){
 
@@ -249,20 +250,33 @@ searchBtn.addEventListener('click', function(){
 
         return ColorParagraph.innerText = foundInArray;
 });
-        let request = new XMLHttpRequest();
+
+
+        // let request = new XMLHttpRequest();
 
                 
         //TESTING THE API CONEXION
                 
         // request.open('GET', `https://www.thecolorapi.com/id?hex=${HexColorTest}`, true);
                 
-    
-    function getColorData() {
+//ASYNC FUNCTION
+    const getColorData  = async () => {
         const HexColorTest = '9932CC';
-        const response =  fetch(`https://www.thecolorapi.com/id?hex=${HexColorTest}`).then(response=> response.json()).then( data => console.log(data.hex.value));
+        try{
+            let response =  await fetch(`https://www.thecolorapi.com/id?hex=${HexColorTest}`);
+            // .then(response=> response.json()).then( data => console.log(data.hex.value));
+            let loadJson = await response.json();
+            console.log(loadJson.hex.value);
 
-        let colorFromAPI = document.querySelector("#colorFromAPI");
-        return response;
+            let colorFromAPI = document.querySelector("#colorFromAPI");
+
+            return colorFromAPI.innerText = response;
+
+        }catch(error){
+
+           return console.error(error)
+        }
+
     }
     
     getColorData(); 
