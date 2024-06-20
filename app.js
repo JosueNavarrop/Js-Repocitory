@@ -228,9 +228,7 @@ backgroundColorButton.addEventListener('click', async () => {
     let randNumber = Math.floor(Math.random() * backgroundColors.length);
     let ColorParagraph = document.querySelector("#ColorParagraph");
     let colorCode = backgroundColors[randNumber];
-    if(colorCode){
-        //Implementing logic to add de '#' caracter to the colorCode variable
-    }
+
     //Get a dynnamic variable from the CSS with the JS        
     let whiteColor = '#FFFFFF';
     document.documentElement.style.setProperty('--dynamic-text-color', whiteColor);
@@ -245,12 +243,31 @@ backgroundColorButton.addEventListener('click', async () => {
 searchBtn.addEventListener('click', function(){
 
     let searchvalue = input.value.toUpperCase();
-    let foundInArray = backgroundColors.find((element) =>  element == searchvalue);
-    let ColorParagraph = document.querySelector("#ColorParagraph");
+    
+    if(searchvalue.length === 0){
+        console.error("PLEASE INSERT A VALUE IN THE INPUT")
+        alert("PLEASE INSERT A HEXADECIMAL COLOR IN THE INPUT")
 
-    document.documentElement.style.setProperty('--dynamic-bg-color', foundInArray);
+    }else{
 
-        return ColorParagraph.innerText = foundInArray;
+        //Adding de '#' to the string if not has i
+        
+        if(searchvalue.charAt(0) == '#'){
+            let foundInArray = backgroundColors.find((element) =>  element == searchvalue);
+            document.documentElement.style.setProperty('--dynamic-bg-color', foundInArray);
+            let ColorParagraph = document.querySelector("#ColorParagraph");
+            ColorParagraph.innerText = foundInArray;
+        }else{
+            searchvalue = "#" + searchvalue;    
+            console.log(searchvalue);
+            let foundInArray = backgroundColors.find((element) =>  element == searchvalue);
+            document.documentElement.style.setProperty('--dynamic-bg-color', foundInArray);
+            let ColorParagraph = document.querySelector("#ColorParagraph");
+            ColorParagraph.innerText = foundInArray;
+        }
+    }
+    
+        // ColorParagraph.innerText = foundInArray;
 });
 
 
