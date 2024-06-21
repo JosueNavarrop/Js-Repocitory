@@ -30,16 +30,16 @@ let user = 'Josue Navarro', age = 20, description = 'dev'
 apple = "manzana"
 APPLE = "MANZANA"
 
-//Constantes
-const COLOR_RED = "#F00";
-const COLOR_GREEN = "#0F0";
-const COLOR_BLUE = "#00F";
-const COLOR_ORANGE = "#FF7F00";
+//letantes
+let COLOR_RED = "#F00";
+let COLOR_GREEN = "#0F0";
+let COLOR_BLUE = "#00F";
+let COLOR_ORANGE = "#FF7F00";
 
 
 
 //Array of colors
-const backgroundColors = [
+let backgroundColors = [
     "#2C3E50", // Midnight Blue
     "#34495E", // Wet Asphalt
     "#2C2C2C", // Dark Gray
@@ -213,10 +213,10 @@ const backgroundColors = [
 
 
 //Get a random color from the array 
-function randomColorSelected() {
-    let randNumber = Math.floor(Math.random() * backgroundColors.length);
-    return backgroundColors[randNumber];
-}
+    function randomColorSelected() {
+        let randNumber = Math.floor(Math.random() * backgroundColors.length);
+        return backgroundColors[randNumber];
+    }
 
 //Every Click to the backgroundColorButton button the background color change 
 let backgroundColorButton = document.querySelector("#backgroundColorButton");
@@ -229,70 +229,41 @@ backgroundColorButton.addEventListener('click', function randomColorSelected() {
     let colorCode = backgroundColors[randNumber];
 
     //Get a dynnamic variable from the CSS with the JS        
-    const whiteColor = '#FFFFFF';
+    let whiteColor = '#FFFFFF';
     document.documentElement.style.setProperty('--dynamic-text-color', whiteColor);
     document.documentElement.style.setProperty('--dynamic-bg-color', colorCode);
 
     return ColorParagraph.innerText = colorCode;
 });
 
-// function searchHexDecimalColor(){
+let input = document.getElementById('search-Hex-color');
+let searchBtn = document.getElementById("HexadecimalColorBtn");
 
-// let inputValue = form.search-Hex-color.value;    
+searchBtn.addEventListener('click', function(){
 
-    const searchBtn = document.querySelector("#HexadecimalColor");
+    let searchvalue = input.value.toUpperCase();
+    let foundInArray = backgroundColors.find((element) =>  element == searchvalue);
+    let ColorParagraph = document.querySelector("#ColorParagraph");
 
-    searchBtn.addEventListener('click', function hola(){
-        console.log("HOLA HOLA")
-    })
-    let inputValue = "#98B4D4"; 
-    
-    let foundInArray = backgroundColors.find((element) =>  element == inputValue);
+    document.documentElement.style.setProperty('--dynamic-bg-color', foundInArray);
+    getData();
 
-    // console.log(foundInArray)
-
-    if(inputValue == foundInArray){
-
-        // console.log("HOLA HOLA");
-
-        document.documentElement.style.setProperty('--dynamic-input-color:', inputValue);
+        return ColorParagraph.innerText = foundInArray;
+});
+        let request = new XMLHttpRequest();
+        // request.open('GET', `https://www.thecolorapi.com/id?hex=${HexColorTest}`, true);
+    function getData() {
+        const HexColorTest = '9932CC';
+        const response =  fetch(`https://www.thecolorapi.com/id?hex=${HexColorTest}`);
+        const data = response;
+        console.log(data);
     }
-
-
-    // for(let i = 0; i< backgroundColors.length; i++){
-        
-        // if(inputValue == backgroundColors[i]){
-        //     console.log(backgroundColors[i] + "VAlUE");
-
-        // }else{
-        //     alert("THE COLOR IS NOT IN THE ARRAY!!");
-        // }
-
-    // }
-//Logic for search the hex color
-
-
-// }
-
-
-
-//SOME EXAMNPLES AND TEST!
-
-// backgroundColorButton = randomColorSelected();
-//  let colorCode = backgroundColors[0];
-// console.log(randomColorSelected());
-
-// backgroundColors.forEach(element =>
-//     console.log(element)
-// );
-
-// let colorCode = document.querySelector("ColorParagraph");
-
-// console.log(backgroundColorButton);
-
-// console.log(paragraphHTML);
-
-// paragraphHTML.innerText = "colorCode";
+    
+    function searchValueInArray(){
+        if(input == foundInArray){
+            console.log("HOLA HOLA")
+        }    
+    }
 
 
 //Acceder al ultimo elemento de un array:
