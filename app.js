@@ -262,24 +262,41 @@ searchBtn.addEventListener('click', async () => {
     // .then(response=> response.json()).then( data => console.log(data.hex.value));
     
     let searchvalue = input.value.toUpperCase();
-    
+    //let response =  await fetch(`https://www.thecolorapi.com/id?hex=${searchvalue}`);
+    //let loadJson = await response.json();
+    //let colorCode3 = loadJson.hex.value;
+    //console.log(colorCode3)
+
+
     if(searchvalue.length === 0){
         console.error("PLEASE INSERT A VALUE IN THE INPUT")
         alert("PLEASE INSERT A HEXADECIMAL COLOR IN THE INPUT")
         
     }else{
-        
         //Adding de '#' to the string if not has i
         
         if(searchvalue.charAt(0) == '#'){
-            // let response =  await fetch(`https://www.thecolorapi.com/id?hex=${searchvalue}`);
+
+            let searchValueArray = Array.from(searchvalue)
+            searchValueArray.shift()
+            let newSearchWord = searchValueArray.join('')
+            let response =  await fetch(`https://www.thecolorapi.com/id?hex=${newSearchWord}`);
+            let loadJson = await response.json();
+            let hexSearchFoundit = loadJson.hex.value;
+            console.log(hexSearchFoundit)
+
+            document.documentElement.style.setProperty('--dynamic-bg-color', hexSearchFoundit);
+            let ColorParagraph = document.querySelector("#ColorParagraph");
+            ColorParagraph.innerText = hexSearchFoundit;
+
+
             // let loadJson = await response.json();
             // let colorCode2 = loadJson.hex.value;
             // console.log(colorCode2);
-            let foundInArray = backgroundColors.find((element) =>  element == searchvalue);
-            document.documentElement.style.setProperty('--dynamic-bg-color', foundInArray);
-            let ColorParagraph = document.querySelector("#ColorParagraph");
-            ColorParagraph.innerText = foundInArray;
+            //let foundInArray = backgroundColors.find((element) =>  element == searchvalue);
+            //document.documentElement.style.setProperty('--dynamic-bg-color', foundInArray);
+            //let ColorParagraph = document.querySelector("#ColorParagraph");
+            //ColorParagraph.innerText = foundInArray;
         }else{
             searchvalue = "#" + searchvalue;    
             console.log(searchvalue);
@@ -290,16 +307,8 @@ searchBtn.addEventListener('click', async () => {
         }
     }
     
-        // ColorParagraph.innerText = foundInArray;
 });
 
-
-        // let request = new XMLHttpRequest();
-
-                
-        //TESTING THE API CONEXION
-                
-        // request.open('GET', `https://www.thecolorapi.com/id?hex=${HexColorTest}`, true);
                 
 //ASYNC FUNCTION
     const getColorData  = async () => {
