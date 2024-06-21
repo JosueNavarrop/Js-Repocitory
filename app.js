@@ -213,10 +213,10 @@ let backgroundColors = [
 
 
 //Get a random color from the array 
-    function randomColorSelected() {
-        let randNumber = Math.floor(Math.random() * backgroundColors.length);
-        return backgroundColors[randNumber];
-    }
+    // function randomColorSelected() {
+    //     let randNumber = Math.floor(Math.random() * backgroundColors.length);
+    //     return backgroundColors[randNumber];
+    // }
 
 //Every Click to the backgroundColorButton button the background color change 
 let backgroundColorButton = document.querySelector("#backgroundColorButton");
@@ -224,8 +224,8 @@ let backgroundColorButton = document.querySelector("#backgroundColorButton");
 //TRIYING TO GET A OTHER RESPONSE WITH ASYNC
 backgroundColorButton.addEventListener('click', async () => {
     //Get a random color from de array.
-    let randNumber = Math.floor(Math.random() * backgroundColors.length);
-    let ColorParagraph = document.querySelector("#ColorParagraph");
+    // let randNumber = Math.floor(Math.random() * backgroundColors.length);
+    // let ColorParagraph = document.querySelector("#ColorParagraph");
     // let colorCode = backgroundColors[randNumber];
 
     try{
@@ -242,21 +242,20 @@ backgroundColorButton.addEventListener('click', async () => {
         document.documentElement.style.setProperty('--dynamic-text-color', whiteColor);
         document.documentElement.style.setProperty('--dynamic-bg-color', colorCode2);
     
-        return colorFromAPI.innerText = response;
+        return colorFromAPI.innerText = colorCode2;
 
     }catch(error){
         
        return console.error(error)
     }
     
-    return ColorParagraph.innerText = colorCode;
+    // return ColorParagraph.innerText = colorCode;
 });
 
     let input = document.getElementById('search-Hex-color');
     let searchBtn = document.getElementById("HexadecimalColorBtn");
 
 searchBtn.addEventListener('click', async () => {
-
     //Implementing API in the search function
 
     // .then(response=> response.json()).then( data => console.log(data.hex.value));
@@ -266,7 +265,6 @@ searchBtn.addEventListener('click', async () => {
     //let loadJson = await response.json();
     //let colorCode3 = loadJson.hex.value;
     //console.log(colorCode3)
-
 
     if(searchvalue.length === 0){
         console.error("PLEASE INSERT A VALUE IN THE INPUT")
@@ -289,7 +287,6 @@ searchBtn.addEventListener('click', async () => {
             let ColorParagraph = document.querySelector("#ColorParagraph");
             ColorParagraph.innerText = hexSearchFoundit;
 
-
             // let loadJson = await response.json();
             // let colorCode2 = loadJson.hex.value;
             // console.log(colorCode2);
@@ -298,12 +295,20 @@ searchBtn.addEventListener('click', async () => {
             //let ColorParagraph = document.querySelector("#ColorParagraph");
             //ColorParagraph.innerText = foundInArray;
         }else{
-            searchvalue = "#" + searchvalue;    
-            console.log(searchvalue);
-            let foundInArray = backgroundColors.find((element) =>  element == searchvalue);
-            document.documentElement.style.setProperty('--dynamic-bg-color', foundInArray);
+            let response =  await fetch(`https://www.thecolorapi.com/id?hex=${searchvalue}`);
+            let loadJson = await response.json();
+            let hexSearchFoundit = loadJson.hex.value;
+            console.log(hexSearchFoundit)
+
+            document.documentElement.style.setProperty('--dynamic-bg-color', hexSearchFoundit);
             let ColorParagraph = document.querySelector("#ColorParagraph");
-            ColorParagraph.innerText = foundInArray;
+            ColorParagraph.innerText = hexSearchFoundit;
+            // searchvalue = "#" + searchvalue;    
+            // console.log(searchvalue);
+            // let foundInArray = backgroundColors.find((element) =>  element == searchvalue);
+            // document.documentElement.style.setProperty('--dynamic-bg-color', foundInArray);
+            // let ColorParagraph = document.querySelector("#ColorParagraph");
+            // ColorParagraph.innerText = foundInArray;
         }
     }
     
@@ -311,27 +316,27 @@ searchBtn.addEventListener('click', async () => {
 
                 
 //ASYNC FUNCTION
-    const getColorData  = async () => {
+    // const getColorData  = async () => {
 
-        try{
-            let response =  await fetch(`https://www.thecolorapi.com/random?format=json`);
-            // .then(response=> response.json()).then( data => console.log(data.hex.value));
-            let loadJson = await response.json();
-            let colorCode2 = loadJson.hex.value;
-            console.log(colorCode2);
+    //     try{
+    //         let response =  await fetch(`https://www.thecolorapi.com/random?format=json`);
+    //         // .then(response=> response.json()).then( data => console.log(data.hex.value));
+    //         let loadJson = await response.json();
+    //         let colorCode2 = loadJson.hex.value;
+    //         console.log(colorCode2);
 
-            let colorFromAPI = document.querySelector("#colorFromAPI");
+    //         let colorFromAPI = document.querySelector("#colorFromAPI");
 
-            return colorFromAPI.innerText = response;
+    //         return colorFromAPI.innerText = response;
 
-        }catch(error){
+    //     }catch(error){
             
-           return console.error(error)
-        }
+    //        return console.error(error)
+    //     }
 
-    }
+    // }
     
-    getColorData(); 
+    // getColorData(); 
 //Acceder al ultimo elemento de un array:
 
 /**let cities = [ "London", "New York", "Mumbai" ];
